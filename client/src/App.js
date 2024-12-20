@@ -1,7 +1,5 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-
-
 import Layout from "./component/Layout";
 import { Dashboard } from "./Pages/Dashboard/Dashboard";
 import VehicleType from "./Pages/Vehicle/VehicleType/VehicleType";

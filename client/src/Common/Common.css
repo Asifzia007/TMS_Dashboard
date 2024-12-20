@@ -1,0 +1,19 @@
+.pagination .page-item.active .page-link {
+    color: #fff !important;/* White text color */
+    background-color: #003c78 !important; /* Dark blue background color */
+    border-color: #003c78 !important;/* Ensure the border matches the background */
+  }
+  
+  .pagination .page-item .page-link {
+    color: #003c78 !important; /* Default text color for the page link */
+    background-color: transparent !important; /* Make the background transparent */
+    border-color: #003c78 !important;/* Border color for page links */
+  }
+  
+  .pagination .page-item.disabled .page-link {
+    color: #ccc !important; /* Light gray color for disabled state */
+    background-color: transparent !important; /* Transparent background for disabled */
+    border-color: #ccc !important; /* Light gray border for disabled */
+  }
+  
+

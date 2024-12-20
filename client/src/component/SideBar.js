@@ -116,9 +116,10 @@ export default function SideBar() {
             <ListItemButton
               onClick={() => (hasSubmenu ? handleToggleSubMenu(key) : handleNavigate(item.path))}
               sx={{
-                minHeight: 45,
+                minHeight: 38,
                 justifyContent: open ? "initial" : "center",
                 px: 1,
+                py: 0,
                 mt: 1,
                 borderBottom: "1px solid #ccc",
                 color: "#222b48",

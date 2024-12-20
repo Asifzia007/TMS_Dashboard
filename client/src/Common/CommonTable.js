@@ -1,6 +1,7 @@
 import React from "react";
 import { Table, Pagination } from "react-bootstrap";
 import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
+import './Common.css'
 
 const CommonTable = ({ 
   columns, 
@@ -15,7 +16,7 @@ const CommonTable = ({
   const paginatedData = data.slice((page - 1) * rowsPerPage, page * rowsPerPage);
 
   return (
-    <div style={{ backgroundColor: "#e9ecefa1", marginTop: "10px", height: "100%" }}>
+    <div style={{  marginTop: "10px", height: "100%" }}>
       <Table responsive bordered hover>
         <thead>
           <tr>
@@ -29,7 +30,7 @@ const CommonTable = ({
                   background: "#003c78",
                   color: "white",
                   fontSize: "12px",
-                  padding: "5px",
+                  padding: "6px",
                 }}
               >
                 {column.label}
@@ -57,7 +58,7 @@ const CommonTable = ({
                             fontSize: "18px",
                             cursor: "pointer",
                             marginRight: 10,
-                            color: "blue",
+                            color: "#003c78",
                           }}
                           onClick={() => onEdit(row)}
                         />
@@ -100,7 +101,7 @@ const CommonTable = ({
       </Table>
 
       {/* Pagination */}
-      <Pagination>
+      <Pagination className="d-flex justify-content-center">
         <Pagination.First onClick={() => onPageChange(1)} disabled={page === 1} />
         <Pagination.Prev onClick={() => onPageChange(page - 1)} disabled={page === 1} />
         {[...Array(totalPages)].map((_, index) => (
@@ -115,6 +116,7 @@ const CommonTable = ({
         <Pagination.Next
           onClick={() => onPageChange(page + 1)}
           disabled={page === totalPages}
+
         />
         <Pagination.Last
           onClick={() => onPageChange(totalPages)}

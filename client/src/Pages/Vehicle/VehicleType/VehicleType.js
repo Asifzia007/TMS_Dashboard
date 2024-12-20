@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { Box } from "@mui/material";
-
-import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
-import CommonTable from "../../../CommonTable/CommonTable";
+import CommonTable from "../../../Common/CommonTable";
+import ActionButtons from "../../../Common/ActionButtons";
+import PageHeader from "../../../Common/PageHeader";
 
 const VehicleType = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -68,22 +68,17 @@ const VehicleType = () => {
           width: `calc(100vw - ${sidebarWidth + rightSidebarWidth}px)`,
           minHeight: "calc(100vh - 60px)",
           height: "100%",
-          background: "white",
+          background: "#e3eaf0",
           overflowX: "auto",
           transition: "width 0.3s ease",
         }}
       >
-        <Row className="mt-2" style={headerStyle}>
-          <Col className="d-flex align-items-center">
-            <h3 className="mb-0" style={headerTextStyle}>
-              Vehicle Type
-            </h3>
-          </Col>
-        </Row>
-        <div className="mt-2 px-3 py-1" style={{ background: "#e9ecefa1" }}>
+               <PageHeader title="Vehicle Type" />
+
+        <div className="mt-2 px-3 py-2">
           <Form>
-            <Row>
-              <Col xs={12} sm={6} className="mb-3">
+            <Row className="py-2" style={{ background: "white" }}>
+              <Col xs={12} sm={6} className="mb-2">
                 <Form.Group controlId="vehicleTypeId">
                   <Form.Label style={labelStyle}>Vehicle Type ID</Form.Label>
                   <Form.Control
@@ -93,7 +88,7 @@ const VehicleType = () => {
                   />
                 </Form.Group>
               </Col>
-              <Col xs={12} sm={6} className="mb-3">
+              <Col xs={12} sm={6} className="mb-2">
                 <Form.Group controlId="vehicleType">
                   <Form.Label style={labelStyle}>Vehicle Type</Form.Label>
                   <Form.Control
@@ -104,16 +99,8 @@ const VehicleType = () => {
                 </Form.Group>
               </Col>
             </Row>
-            <Row className="d-flex gap-2">
-              <Col className="text-end">
-                <Button variant="primary" onClick={handleClear} size="sm">
-                  Clear
-                </Button>
-                <Button variant="success" onClick={handleSave} size="sm">
-                  Save
-                </Button>
-              </Col>
-            </Row>
+            <ActionButtons onSave={handleSave} onClear={handleClear} />
+
           </Form>
         </div>
 
@@ -134,25 +121,13 @@ const VehicleType = () => {
 
 export default VehicleType;
 
-// Styles
-const headerStyle = {
-  height: "50px",
-  backgroundColor: "#e9ecef",
-  borderBottom: "2px solid #ced4da",
-  margin: "0px",
-};
 
-const headerTextStyle = {
-  fontSize: "14px",
-  textTransform: "uppercase",
-  fontWeight: "600",
-  color: "#003c78",
-};
 
 const labelStyle = {
-  fontSize: "11px",
+  fontSize: "12px",
   fontWeight: "500",
-  color: "#333",
+  color: "#003c78",
+  marginBottom:"4px"
 };
 
 const inputStyle = {
